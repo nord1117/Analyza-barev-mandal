@@ -7,7 +7,7 @@ Projekt simuluje reálný firemní proces (tzv. **data pipeline**): od sběru sy
 
 ---
 
-## 🔎 Co v projektu analyzuji a proč?
+##  Co v projektu analyzuji a proč?
 * **Podíl dominantních barev:** Zjišťuji, jaká barva (vyjádřená v HEX kódech) má v konkrétní mandale největší procentuální zastoupení.
 * **Analýza nálady a trendů:** Sledování barevné palety může v praxi sloužit k analýze psychologického stavu nebo nálady autora v čase (např. zda v období stresu převládají jiné barvy než v období klidu).
 * **Byznysový přesah:** Tento proces čištění obrazu a extrakce barev se v praxi využívá v e-commerce (automatické štítkování produktů podle barev z fotek), v módním průmyslu nebo při kontrole kvality výroby.
