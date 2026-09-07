@@ -1,37 +1,68 @@
-#  Analýza barevného složení mandal (Python -> Excel -> Power BI)
+#  # Analýza barevného složení mandal
 
-##  O projektu
-Tento projekt vznikl z touhy propojit kreativní koníček (vybarvování mandal) s moderními nástroji datové analytiky. Cílem bylo vytvořit automatizovaný proces, který dokáže transformovat vizuální data (fotografie) na strukturovaná data, analyzovat je a přehledně vizualizovat pro koncového uživatele.
+**Python → Excel → Power BI**
 
-Projekt simuluje reálný firemní proces (tzv. **data pipeline**): od sběru syrových dat, přes jejich zpracování algoritmem strojového učení, uložení do tabulky, až po finální business reporting.
+Osobní datový projekt, ve kterém propojuji kreativní koníček s praktickými nástroji datové analytiky.
 
----
+Cílem projektu je převést fotografie vybarvených mandal na strukturovaná data, analyzovat jejich barevné složení a výsledky následně zobrazit v interaktivním Power BI reportu.
 
-##  Co v projektu analyzuji a proč?
-* **Podíl dominantních barev:** Zjišťuji, jaká barva (vyjádřená v HEX kódech) má v konkrétní mandale největší procentuální zastoupení.
-* **Analýza nálady a trendů:** Sledování barevné palety může v praxi sloužit k analýze psychologického stavu nebo nálady autora v čase (např. zda v období stresu převládají jiné barvy než v období klidu).
-* **Byznysový přesah:** Tento proces čištění obrazu a extrakce barev se v praxi využívá v e-commerce (automatické štítkování produktů podle barev z fotek), v módním průmyslu nebo při kontrole kvality výroby.
+## Co projekt řeší
 
----
+Pro jednotlivé fotografie mandal:
 
-##  Použité technologie a kroky v projektu
+* načtu a zpracovávám obrazová data,
+* pomocí algoritmu **K-Means** identifikuji dominantní barvy,
+* vypočítám jejich procentuální zastoupení,
+* výsledná data uložím do Excelu,
+* data zkontroluji a připravím pro reporting,
+* v Power BI vytvořím interaktivní vizualizaci.
 
-###  Python (Sběr a zpracování dat)
-Vytvořila jsem skript, který automaticky projde složku s fotografiemi mandal a aplikuje na ně následující postup:
-* **PIL (Pillow):** Načtení a optimalizace velikosti obrázků.
-* **Scikit-learn (K-Means):** Použití algoritmu strojového učení (shlukování) pro segmentaci obrazu a nalezení 5 nejvíce dominantních barev z milionů pixelů.
-* **Numpy & Pandas:** Výpočet procentuálního podílu každé barvy a seřazení dat do strukturované tabulky (DataFrame).
-* Výstup byl exportován do souboru `Mandaly_vystup.xlsx`.
+Projekt tak ukazuje celý proces od zpracování vstupních dat až po jejich vizualizaci.
 
-###  Excel (Kontrola dat)
-* Provedena lidská kontrola a verifikace dat před importem do vizualizačního nástroje.
-* Zaokrouhlení a příprava čistých hodnot pro reporting.
+## Použité technologie
 
-###  Power BI (Business Intelligence & Reporting)
-* **Power Query:** Import dat a transformace datových typů.
-* **Interaktivní Dashboard:** Vytvoření reportu, kde uživatel pomocí průřezu (Sliceru) zvolí konkrétní mandalu a prstencový graf mu okamžitě ukáže její přesné barevné složení a poměry.
+### Python
 
----
+* **Pillow** – načtení a základní zpracování obrázků
+* **NumPy** – práce s obrazovými daty
+* **Pandas** – zpracování a strukturování dat
+* **Scikit-learn / K-Means** – identifikace dominantních barev
 
-##  Výsledek
-Výsledkem je plně funkční, interaktivní dashboard, který dokáže dynamicky filtrovat data pro jednotlivé obrazy. Projekt úspěšně prokazuje schopnost propojit pokročilé programování v Pythonu s tradičními business nástroji jako Excel a Power BI.
+### Excel
+
+* kontrola výsledných dat
+* zaokrouhlení a příprava hodnot pro další zpracování
+
+### Power BI
+
+* import dat
+* **Power Query**
+* transformace dat
+* interaktivní dashboard
+* filtrování jednotlivých mandal pomocí sliceru
+* vizualizace barevného zastoupení
+
+## Výsledek
+
+Výsledkem je interaktivní Power BI report, ve kterém lze vybrat konkrétní mandalu a zobrazit její barevné složení a procentuální zastoupení jednotlivých dominantních barev.
+
+Projekt mi umožnil prakticky si vyzkoušet propojení **Pythonu, práce s daty, Excelu, Power Query a Power BI** v jednom celku.
+
+## Struktura projektu
+
+* `analyza.ipynb` – Python analýza
+* `data_mandaly_vystup.xlsx` – zpracovaná data
+* `Mandaly.pbix` – Power BI report
+* `Obrazky/` – vstupní obrazová data
+
+## Co projekt demonstruje
+
+* zpracování a čištění dat
+* automatizaci opakující se práce pomocí Pythonu
+* práci s tabulkovými daty
+* základní aplikaci algoritmu K-Means
+* transformaci dat v Power Query
+* tvorbu interaktivního reportu v Power BI
+* propojení více nástrojů v rámci jednoho analytického projektu
+
+
